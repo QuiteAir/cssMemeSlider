@@ -1,0 +1,15 @@
+* {
+	transition: transform 1s ease-in-out;
+}
+
+.meme-container {
+	transform: translateX(100%);
+}
+
+#meme-1:checked~#meme-js {
+	transform: translateX(0);
+}
+
+#meme-2:checked~#meme-docker {
+	transform: translateX(0);
+}

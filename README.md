@@ -6,9 +6,7 @@ https://QuiteAir.github.io/cssMemeSlider/cssMemeSlider/
 
 git commit --amend -m "init: start cssMemeSlider-task ($(Get-Date -Format 'ddd, MMM dd, yyyy hh:mm:ss tt'))"
 
-###
-
-To temparly set the lacale for the current session to use getDate
+### To temparly set the lacale for the current session to use getDate
 
 [System.Threading.Thread]::CurrentThread.CurrentCulture = [System.Globalization.CultureInfo]::GetCultureInfo("en-US")
 
