@@ -1,15 +1,46 @@
 * {
+	box-sizing: border-box;
 	transition: transform 1s ease-in-out;
 }
 
-.meme-container {
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.memes-container {
+	max-width: 30rem;
+	max-height: 30rem;
+	display: flex;
+	overflow: hidden;
+}
+
+.images {
+	display: flex;
+}
+
+.memes-container img {
 	transform: translateX(100%);
+	max-height: 30rem;
+	width: 100%;
+	flex-shrink: 0;
+	flex-grow: 1;
+	object-fit: contain;
 }
 
-#meme-1:checked~#meme-js {
-	transform: translateX(0);
+#meme-1:checked~.memes-container #meme-js {
+	transform: translateX(0%);
 }
 
-#meme-2:checked~#meme-docker {
-	transform: translateX(0);
+#meme-2:checked~.memes-container #meme-css {
+	transform: translateX(-100%);
+}
+
+#meme-3:checked~.memes-container #meme-docker {
+	transform: translateX(-200%);
+}
+
+#meme-4:checked~.memes-container #meme-vim {
+	transform: translateX(-300%);
 }
