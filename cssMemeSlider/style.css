@@ -1,16 +1,26 @@
 * {
 	box-sizing: border-box;
 	transition: transform 1s ease-in-out;
+	margin: 0;
+	padding: 0;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	height: 100dvh;
+	padding: 1em;
+}
+
+input {
+	display: none;
 }
 
 .memes-container {
-	max-width: 40rem;
+	margin-top: 2em;
+	max-width: 90vw;
 	overflow: hidden;
 }
 
@@ -20,23 +30,76 @@ body {
 
 .memes-container img {
 	transform: translateX(100%);
-	max-height: 30rem;
+	max-height: 70vh;
 	width: 100%;
 	flex-shrink: 0;
 	object-fit: contain;
 }
 
+.nav-panel {
+	margin-top: 1em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	max-width: 40em;
+	margin: auto;
+}
+
 .meme-captions {
 	display: flex;
 	flex-direction: row;
-	max-width: 30rem;
+	max-width: 90vw;
 	overflow-x: hidden;
 }
 
 p {
 	width: 100%;
+	height: auto;
 	flex-shrink: 0;
+	display: flex;
+	align-items: center;
 	transform: translateX(100%);
+}
+
+.navigation {
+	align-self: stretch;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	min-height: 2em;
+}
+
+.button {
+	width: 1em;
+	height: 1em;
+	transition: background-color 0.5s ease-in;
+	background-color: darkgray;
+	border-radius: 50%;
+	margin: 0 1vh;
+}
+
+.button-wrapper {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.button-wrapper:hover .button {
+	background: black;
+}
+
+@media screen and (max-width: 550px) {
+	.nav-panel {
+		flex-direction: column-reverse;
+	}
+
+	.navigation {
+		align-self: center;
+	}
+
+	p {
+		text-align: center;
+	}
 }
 
 #meme-1:checked~.memes-container #meme-js,
@@ -44,9 +107,17 @@ p {
 	transform: translateX(0%);
 }
 
+#meme-1:checked~.memes-container #button-meme-1 {
+	background-color: dimgray;
+}
+
 #meme-2:checked~.memes-container #meme-css,
 #meme-2:checked~.memes-container #text-css {
 	transform: translateX(-100%);
+}
+
+#meme-2:checked~.memes-container #button-meme-2 {
+	background-color: dimgray;
 }
 
 #meme-3:checked~.memes-container #meme-docker,
@@ -54,7 +125,15 @@ p {
 	transform: translateX(-200%);
 }
 
+#meme-3:checked~.memes-container #button-meme-3 {
+	background-color: dimgray;
+}
+
 #meme-4:checked~.memes-container #meme-vim,
 #meme-4:checked~.memes-container #text-vim {
 	transform: translateX(-300%);
+}
+
+#meme-4:checked~.memes-container #button-meme-4 {
+	background-color: dimgray;
 }
